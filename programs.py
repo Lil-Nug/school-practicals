@@ -12,9 +12,9 @@ def marks_percentage():
     f_cost = 112/100*(q_sold*p_unit)
 
     if f_cost > 2000:
-        n_cost=95/100*f_cost
+        n_cost = 95/100*f_cost
     else:
-        n_cost=f_cost
+        n_cost = f_cost
 
     print(f"The customer has to pay {round(n_cost, 2)}")
 
@@ -22,13 +22,13 @@ def marks_percentage():
 
     if c_money >= n_cost:
         print(f"You have to return {round(c_money-n_cost, 2)}")
-    elif c_money<n_cost:
+    elif c_money < n_cost:
         print(f"Customer has paid {round(n_cost-c_money, 2)} less")
 
 
 # PROGRAM 2
 # Simulate a python program to calculate entry ticket of amusement park. Accept No. of adults, and No, of children. Amount to
-# be paid is Rs 150/- per child and Rs 250/- per adult. If the ticket amount is more than 5000 Rs, give a 5% discount. Print 
+# be paid is Rs 150/- per child and Rs 250/- per adult. If the ticket amount is more than 5000 Rs, give a 5% discount. Print
 # the ticket on the screen.
 
 def amusement_ticket():
@@ -43,13 +43,13 @@ def amusement_ticket():
 
     disccost = 0
 
-    if f_cost>5000:
+    if f_cost > 5000:
         f_cost = 95/100*f_cost
         disccost = 5/100*f_cost
 
-        
     print("\tTICKET")
-    print(f"No. of children: {n_child}\nNo. of adults: {n_adult}\nTotal cost: {f_cost}\nDiscount: {disccost}")
+    print(
+        f"No. of children: {n_child}\nNo. of adults: {n_adult}\nTotal cost: {f_cost}\nDiscount: {disccost}")
 
 
 # PROGRAM 3
@@ -61,13 +61,13 @@ def max_3():
 
     for i in nums:
         int_nums.append(int(i))
-    
+
     result = int_nums[0]
 
     for i in int_nums:
         if i > result:
             result = i
-    
+
     print(f"The largest number is {result}")
 
 
@@ -82,24 +82,24 @@ def divisible_3_5():
         list_2.append(int(i))
 
     div_3 = 0
-    
+
     for num in list_2:
-        if num%3==0:
-            div_3+=1
+        if num % 3 == 0:
+            div_3 += 1
     print(f"{div_3} numbers are divisble by 3")
 
     div_5 = 0
-    
+
     for num in list_2:
-        if num%5==0:
-            div_5+=1
+        if num % 5 == 0:
+            div_5 += 1
     print(f"{div_5} numbers are divisible by 5")
 
     div_3_5 = 0
 
     for num in list_2:
-        if num%3==0 and num%5==0:
-            div_3_5+=1
+        if num % 3 == 0 and num % 5 == 0:
+            div_3_5 += 1
     print(f"{div_3_5} numbers are divisble by both 3 and 5")
 
 
@@ -112,8 +112,9 @@ def replace():
     a = a+b
     b = (a-b)
     a = (a-b)
-    
+
     print(a)
     print(b)
 
-amusement_ticket()
+
+replace()
