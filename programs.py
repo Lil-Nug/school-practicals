@@ -117,4 +117,4 @@ def replace():
     print(b)
 
 
-replace()
+divisible_3_5()
