@@ -116,3 +116,4 @@ def replace():
     print(a)
     print(b)
 
+amusement_ticket()
