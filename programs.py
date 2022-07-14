@@ -1,9 +1,9 @@
 # PROGRAM 1
 # Write an algorithm to accept item code, item name, quantity sold, price per unit and calculate the cost of sales. Also add 12%
 # GST to the price. If the final cost after gst comes out to be above 2000/-, give a 5% discount. After that add an option to
-# enter the amount of money paid by costumer and return how less or more the customer has paid from the actual price.
+# enter the amount of money paid by costumer and return how less or more the costumer has paid from the actual price.
 
-def marks_percentage():
+def total_cost():
     i_code = input("Enter item code: ")
     i_name = input("Enter item name: ")
     q_sold = int(input("Enter quantity sold: "))
@@ -32,7 +32,7 @@ def marks_percentage():
 # the ticket on the screen.
 
 def amusement_ticket():
-    print("bhelcum to mai amoosmant paruk")
+    print("Welcome to my amusement park!")
     n_child = int(input("Enter number of children:  "))
     n_adult = int(input("Enter the number of adults:  "))
 
@@ -104,7 +104,7 @@ def divisible_3_5():
 
 
 # PROGRAM 5
-# Given two variables a and b with integer values, replace the values without using a,b = b,a
+# Accept two numbers from user and swap their values (without using any other variable or Python built in components)
 
 def replace():
     a = int(input("Enter num 1: "))
@@ -117,4 +117,79 @@ def replace():
     print(b)
 
 
-divisible_3_5()
+# PROGRAM 6
+# Accept sales done by a sales man in four quarters. Find Total Sales done and calculate commission on the basis
+# of following criteria:
+# >=250000 --> 7% of total sales
+# 100000-250000 --> 5% of total sales
+# 50000-100000 --> 2% of total sales
+# <50000 --> no commission
+
+def sales():
+    sales = input(
+        "Enter sales for each quarter seperated by a comma: ").split(',')
+    sales = [int(i) for i in sales]
+    total = 0
+
+    for i in sales:
+        total += i
+
+    print(f"Your total sales for this year are {total}")
+    commission = 0
+
+    if total >= 250000:
+        commission = 0.07*total
+
+    elif total >= 100000:
+        commission = 0.05*total
+
+    elif total >= 50000:
+        commission = 0.02*total
+
+    else:
+        commission = 0
+
+    print(f"Your annual commission is {commission}")
+
+
+# PROGRAM 7
+# Accept marks scored by a student in 5 subjects. Calculate percentage score and find the grade on the basis of
+# the following criteria:-
+# >= 95 --> A
+# 90-95 --> A-
+# 80-90 --> B
+# 70-80 --> C
+# 60-70 --> D
+# <60 --> F
+
+def marks_grade():
+    marks = input(
+        "Enter your marks for 5 subjects each seperated by a comma: ").split(',')
+
+    marks = [int(i) for i in marks]
+
+    total = 0
+
+    for i in marks:
+        total += i
+
+    percentage = total/5
+
+    print(f'You have a total percentage of {percentage}')
+
+    grade = ''
+
+    if percentage >= 95:
+        grade = 'A'
+    elif percentage >= 90:
+        grade = 'A-'
+    elif percentage >= 80:
+        grade = 'B'
+    elif percentage >= 70:
+        grade = 'C'
+    elif percentage >= 60:
+        grade = 'D'
+    else:
+        grade = 'F'
+
+    print(f'Your grade is {grade}')
