@@ -109,12 +109,12 @@ def divisible_3_5():
 def replace():
     a = int(input("Enter num 1: "))
     b = int(input("Enter num 2: "))
+    print(f"Before swapping-\nNum 1: {a}\nNum 2: {b}")
     a = a+b
     b = (a-b)
     a = (a-b)
 
-    print(a)
-    print(b)
+    print(f"After swapping-\nNum 1: {a}\nNum 2: {b}")
 
 
 # PROGRAM 6
