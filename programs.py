@@ -163,6 +163,7 @@ def sales():
 # <60 --> F
 
 def marks_grade():
+
     marks = input(
         "Enter your marks for 5 subjects each seperated by a comma: ").split(',')
 
@@ -193,3 +194,85 @@ def marks_grade():
         grade = 'F'
 
     print(f'Your grade is {grade}')
+
+
+# PROGRAM 8
+# Simulate a mobile billing application. accept the consumer's name and mobile number. Also accept the number
+# of local calls, units of data usage(accept in bytes, then convert to gb later), number of sms, number of
+# std calls. Calculate bill amount, on the basis of following criteria:-
+# - local calls --> 1.5 rs/call
+# if no of local calls > 500, then excess calls will be charged at 2 rs/call
+# if no. of sms are <50, then no charge. for all sms above 50 charge 0.5 rs/msg
+# all std calls --> 3.5 rs
+# data - 30 rs/GB
+# calculate bill amount, give a surcharge at the rate of 5% on bill amount. Accept mode of payment from the user.
+#  If it is cash, then accept cash given by the customer, and calculate the amount to give back to the customer.
+#  If payment option is paytm, calculate 2% cashback on bill amount payable. If the payment option is a visa card
+# give [your choice]% cashback.
+
+def mobile_bill():
+    name = input("Enter your name: ")
+    mob_num = input("Enter your mobile number: ")
+    n_local_calls = int(input("Enter the number of local calls you've made: "))
+    n_data_usage = int(input("Enter your data usage in bytes: "))
+    n_sms = int(input("Enter number of sms you've sent: "))
+    n_std_calls = int(input("Enter number of std calls you've made: "))
+
+    local_calls_bill = 0
+    if n_local_calls <= 500:
+        local_calls_bill = 1.5*n_local_calls
+    else:
+        local_calls_bill = (1.5*500) + ((n_local_calls-500)*2)
+
+    data_usage_gb = n_data_usage/1000000000
+    data_usage_bill = (data_usage_gb)*30
+
+    sms_bill = 0
+    if n_sms >= 50:
+        sms_bill = (n_sms-50)*0.5
+
+    std_calls_bill = 3.5*n_std_calls
+
+    total_bill = local_calls_bill + data_usage_bill + sms_bill + std_calls_bill
+
+    surch_bill = total_bill*105/100
+
+    print(f"The costumer has to pay {surch_bill}")
+    payment = (
+        input("Enter your mode of payment ('cash'|'paytm'|'visa'): "))
+
+    to_return = 0
+
+    if payment.lower() == 'cash':
+        cust_pay = int(input("Enter how much cash the costumer paid: "))
+        if cust_pay >= surch_bill:
+            print(
+                f"You have to return Rs. {cust_pay-surch_bill} to the costumer.")
+        else:
+            print(f"The costumer has paid Rs. {surch_bill-cust_pay} less.")
+
+    elif payment.lower() == 'paytm':
+        to_return = 0.02*surch_bill
+        print(f"You have to give a cashback of {to_return}")
+
+    elif payment.lower() == 'visa':
+        to_return = 0.05*surch_bill
+        print(f"You have to give a cashback of {to_return}")
+
+    else:
+        print("That payment method is unacceptable.")
+        return False
+
+    when_print = input("Press enter to print bill")
+
+    print(
+        f"\tFULL MOBILE BILL\n- Name: {name}\n- Mobile number: {mob_num}\n-"
+        f" No. of local calls: {n_local_calls}\n- Local calls charge: Rs. {local_calls_bill}\n-"
+        f" Data usage: {data_usage_gb} GBs\n- Data usage charge: Rs. {data_usage_bill}\n- SMS sent: {n_sms}\n-"
+        f" SMS charge: Rs. {sms_bill}\n- std calls made: {n_std_calls}\n- std calls charge: Rs."
+        f" {std_calls_bill}\n- Total bill before surcharge: Rs. {total_bill}\n- Total bill after surcharge: Rs. "
+        f" {surch_bill}\n- Amount of surcharge: Rs. {5/100*total_bill}(5%)"
+        f"\n- Payment method: {payment.lower()}")
+
+
+mobile_bill()
