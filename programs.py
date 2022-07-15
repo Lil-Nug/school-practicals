@@ -273,6 +273,3 @@ def mobile_bill():
         f" {std_calls_bill}\n- Total bill before surcharge: Rs. {total_bill}\n- Total bill after surcharge: Rs. "
         f" {surch_bill}\n- Amount of surcharge: Rs. {5/100*total_bill}(5%)"
         f"\n- Payment method: {payment.lower()}")
-
-
-mobile_bill()
