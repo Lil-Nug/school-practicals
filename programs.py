@@ -208,7 +208,7 @@ def marks_grade():
 # calculate bill amount, give a surcharge at the rate of 5% on bill amount. Accept mode of payment from the user.
 #  If it is cash, then accept cash given by the customer, and calculate the amount to give back to the customer.
 #  If payment option is paytm, calculate 2% cashback on bill amount payable. If the payment option is a visa card
-# give [your choice]% cashback.
+# give 5% cashback.
 
 def mobile_bill():
     name = input("Enter your name: ")
@@ -273,3 +273,4 @@ def mobile_bill():
         f" {std_calls_bill}\n- Total bill before surcharge: Rs. {total_bill}\n- Total bill after surcharge: Rs. "
         f" {surch_bill}\n- Amount of surcharge: Rs. {5/100*total_bill}(5%)"
         f"\n- Payment method: {payment.lower()}")
+
