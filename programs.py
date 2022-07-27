@@ -444,6 +444,10 @@ def factorial_of_10():
 
 
 # PROGRAM 19
+# Write a program to print the following pattern:
+# 1
+# 2 2 
+# 3 3 3 
 def up_triangle():
     for i in range(3):
         for j in range(i+1):
