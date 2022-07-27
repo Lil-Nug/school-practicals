@@ -328,3 +328,41 @@ def cube_10():
     for i in result:
         print(f"cube of number {x} is {i}")
         x += 1
+
+
+# PROGRAM 11
+# Accept number of elements from user and display series with the following logic : x/2 + x/4 + x/6
+#  ........ y terms
+# ex; 3/2 + 3/4 + 4/6 + 3/8 + 3/10
+
+def series():
+    n = int(input("Enter number of terms: "))
+    x = int(input("Enter the numerator: "))
+    d = 2
+    result = 0
+    temp = 0
+    for i in range(n):
+        temp = x/d
+        result += temp
+        d += 2
+
+    print(f"The sum is {round(result, 3)}")
+
+
+# PROGRAM 12
+# Accept a number from user and print multiplication table of this number upto 10 times
+
+def m_table():
+    num = int(input("Enter the number you want a multiplication table of: "))
+    for i in range(10):
+        print(f"{num}*{i+1} = {num*(i+1)}")
+
+
+# PROGRAM 13
+# Find the factorial of a given number
+def factorial():
+    num = int(input("Enter the number: "))
+    result = 1
+    for i in range(num):
+        result *= (i+1)
+    print(f"The factorial of {num} is {result}")
