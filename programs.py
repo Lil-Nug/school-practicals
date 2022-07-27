@@ -273,3 +273,58 @@ def mobile_bill():
         f" {std_calls_bill}\n- Total bill before surcharge: Rs. {total_bill}\n- Total bill after surcharge: Rs. "
         f" {surch_bill}\n- Amount of surcharge: Rs. {5/100*total_bill}(5%)"
         f"\n- Payment method: {payment.lower()}")
+
+
+# PROGRAM 9
+# Accept 20 numbers and find the average of even and odd numbers entered
+def even_odd_avg():
+    nums = []
+    for i in range(20):
+        num = int(input(f"Enter number {i+1}: "))
+        nums.append(num)
+
+    even = []
+    odd = []
+
+    for i in nums:
+        if i % 2 == 0:
+            even.append(i)
+        elif i % 2 == 1:
+            odd.append(i)
+
+    even_total = 0
+    odd_total = 0
+
+    for i in even:
+        even_total += i
+
+    for i in odd:
+        odd_total += i
+
+    if len(even) == 0:
+        even_avg = 0
+    else:
+        even_avg = even_total/(len(even))
+
+    if len(odd) == 0:
+        odd_avg = 0
+    else:
+        odd_avg = odd_total/(len(odd))
+
+    print(f"""Average of all even numbers is {even_avg}
+Average of all odd numbers is {odd_avg}""")
+
+
+# PROGRAM 10
+# Accept 10 numbers and find out the cube of the numbers entered
+
+def cube_10():
+    result = []
+    for i in range(10):
+        num = int(input(f"Enter number {i+1}: "))
+        result.append(num**3)
+
+    x = 1
+    for i in result:
+        print(f"cube of number {x} is {i}")
+        x += 1
