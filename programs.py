@@ -1,5 +1,3 @@
-
-
 # PROGRAM 1
 # Write an algorithm to accept item code, item name, quantity sold, price per unit and calculate the cost of sales. Also add 12%
 # GST to the price. If the final cost after gst comes out to be above 2000/-, give a 5% discount. After that add an option to
@@ -418,7 +416,7 @@ def sum_series_16():
 
 
 # PROGRAM 17
-# Find sum of series 9	Sin(x) = x – (x^3 / 3!) + (x^5 / 5! ) – (x^7 / 7! ) + … n terms
+# Find sum of series Sin(x) = x – (x^3 / 3!) + (x^5 / 5! ) – (x^7 / 7! ) + … n terms
 def sum_series_17():
     n = int(input("Enter the value of n: "))
     x = int(input("Enter value of x: "))
@@ -426,6 +424,86 @@ def sum_series_17():
     temp = 0
     sign = -1
     for i in range(2, n, 2):
+        fact_temp = 1
+        for j in range(i+1):
+            fact_temp *= j+1
+        temp = (x**(i+1))/(fact_temp)*sign
+        result += temp
+        sign *= -1
+    print(round(result, 3))
+
+
+# PROGRAM 18
+# Write a program to find the factorial of all numbers 1-10
+def factorial_of_10():
+    for i in range(1, 11):
+        result = 1
+        for j in range(i):
+            result *= (j+1)
+        print(f"factorial of {i} is {result}")
+
+
+# PROGRAM 19
+def up_triangle():
+    for i in range(3):
+        for j in range(i+1):
+            print(i+1, end=' ')
+        print()
+
+
+# PROGRAM 20
+# Write a program to print the following pattern:
+# 3 3 3
+# 2 2
+# 1
+def down_triangle():
+    for i in range(3, 0, -1):
+        for j in range(i):
+            print(i, end=' ')
+        print()
+
+
+# PROGRAM 21
+# Print the multiplication of all numbers from 1 to 10
+
+def multiply_1_10():
+    for i in range(1, 11):
+        print(f"\nTable of {i}:")
+        for j in range(10):
+            print(f"{i}*{j+1} = {i*(j+1)}")
+
+
+# PROGRAM 22
+# Print the pattern:
+# *
+# **
+# ***
+# ****
+# ***
+# **
+# *
+
+def triangle_pattern():
+    for i in range(4):
+        for j in range(i+1):
+            print('*', end='')
+        print()
+
+    for i in range(3, 0, -1):
+        for j in range(i):
+            print('*', end='')
+        print()
+
+
+# PROGRAM 23
+# Find sum of series cos(x) = 1 -  (x^2/2!) + (x^4/4!) - (x^6/6!) + (x^n/n!)
+def sum_series_23():
+    n = int(input("Enter the value of n: "))
+    x = int(input("Enter value of x: "))
+    result = 1
+    temp = 0
+    sign = -1
+    for i in range(1, n, 2):
         fact_temp = 1
         for j in range(i+1):
             fact_temp *= j+1
