@@ -274,7 +274,6 @@ def mobile_bill():
         f" {surch_bill}\n- Amount of surcharge: Rs. {5/100*total_bill}(5%)"
         f"\n- Payment method: {payment.lower()}")
 
-<<<<<<< HEAD
 
 # PROGRAM 9
 # Accept 20 numbers and find the average of even and odd numbers entered
@@ -329,5 +328,3 @@ def cube_10():
     for i in result:
         print(f"cube of number {x} is {i}")
         x += 1
-=======
->>>>>>> f986415588ee2f4accab095c90e57c4804aaf252
