@@ -1,7 +1,10 @@
+
+
 # PROGRAM 1
 # Write an algorithm to accept item code, item name, quantity sold, price per unit and calculate the cost of sales. Also add 12%
 # GST to the price. If the final cost after gst comes out to be above 2000/-, give a 5% discount. After that add an option to
 # enter the amount of money paid by costumer and return how less or more the costumer has paid from the actual price.
+
 
 def total_cost():
     i_code = input("Enter item code: ")
@@ -366,3 +369,67 @@ def factorial():
     for i in range(num):
         result *= (i+1)
     print(f"The factorial of {num} is {result}")
+
+
+# PROGRAM 14
+# Find sum of series 1 + x + x^2 + x^3 + ... x^n
+def sum_series_14():
+    n = int(input("Enter value of n: "))
+    x = int(input("Enter value of x: "))
+    result = 1
+    temp = 0
+    for i in range(n):
+        temp = x**(i+1)
+        result += temp
+    print(result)
+
+
+# PROGRAM 15
+# Find sum of series 1+ x/1! + x^2/2! + x^3/3! upto x^n/n!
+def sum_series_15():
+    n = int(input("Enter the value of n: "))
+    x = int(input("Enter value of x: "))
+    result = 1
+    temp = 0
+    for i in range(n):
+        fact_temp = 1
+        for j in range(i+1):
+            fact_temp *= j+1
+        temp = (x**(i+1))/(fact_temp)
+        result += temp
+    print(round(result, 3))
+
+
+# PROGRAM 16
+# Find sum of series 1 + (x/1!) + (x^3/3!) + (x^5/5!) upto x^n/n!
+
+def sum_series_16():
+    n = int(input("Enter the value of n: "))
+    x = int(input("Enter value of x: "))
+    result = 1
+    temp = 0
+    for i in range(0, n, 2):
+        fact_temp = 1
+        for j in range(i+1):
+            fact_temp *= j+1
+        temp = (x**(i+1))/(fact_temp)
+        result += temp
+    print(round(result, 3))
+
+
+# PROGRAM 17
+# Find sum of series 9	Sin(x) = x – (x^3 / 3!) + (x^5 / 5! ) – (x^7 / 7! ) + … n terms
+def sum_series_17():
+    n = int(input("Enter the value of n: "))
+    x = int(input("Enter value of x: "))
+    result = x
+    temp = 0
+    sign = -1
+    for i in range(2, n, 2):
+        fact_temp = 1
+        for j in range(i+1):
+            fact_temp *= j+1
+        temp = (x**(i+1))/(fact_temp)*sign
+        result += temp
+        sign *= -1
+    print(round(result, 3))
