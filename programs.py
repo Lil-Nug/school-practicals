@@ -446,8 +446,8 @@ def factorial_of_10():
 # PROGRAM 19
 # Write a program to print the following pattern:
 # 1
-# 2 2 
-# 3 3 3 
+# 2 2
+# 3 3 3
 def up_triangle():
     for i in range(3):
         for j in range(i+1):
@@ -515,3 +515,55 @@ def sum_series_23():
         result += temp
         sign *= -1
     print(round(result, 3))
+
+
+# PROGRAM 24
+# Simulate a menu-driven application and display the following menu-
+# 1. calculate area of a triangle
+# 2. calculate area of a circle
+# 3. calculate area of a rectange
+# Accept all relevant information and continue till the user wishes to. the program should be user friendly
+
+def area():
+    ch = "y"
+    while ch.lower() == "y":
+        area = 0
+        r = 0
+        a = 0
+        b = 0
+        shape = int(input("""Enter which shape you would like to find the area of:
+1 -> Triangle
+2 -> Circle
+3 -> Rectangle
+Your choice(1|2|3): """))
+        if shape == 1:
+            a = int(input("Enter the length of the base(in cm): "))
+            b = int(input("Enter the height(in cm): "))
+            area = a*b/2
+            print(f"Area of the triangle is {area} cm")
+        elif shape == 2:
+            r = int(input("Enter the radius of the cirlce(in cm): "))
+            area = 22/7*r**2
+            print(f"Area of the circle is {round(area, 3)} cm")
+        elif shape == 3:
+            a = int(input("Enter the length of the rectangle: "))
+            b = int(input("Enter the height of the rectangle: "))
+            area = a*b
+            print(f"Area of the rectangle is {float(area)} cm")
+        ch = input(
+            "To find the area of another shape enter 'y'| to stop the program, enter anything else: ")
+
+
+# PROGRAM 25
+# Simulate a calculator program using python. User should be given the following options:
+# 1. add
+# 2. subtract
+# 3. multiply
+# 4. divide
+
+
+# PROGRAM 26
+# Accept a number from user and find the number of digits in it
+
+def length_num():
+    num = int(input("Enter a number: "))
