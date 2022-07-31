@@ -1,3 +1,8 @@
+# PRACTICAL 1 -> PROGRAMS 5-7
+# PRACTICAL 2 -> PROGRAMS 9-23
+# PRACTICAL 3 -> PROGRAMS 24-25
+# PRACTICAL 4 -> PROGRAMS 26-29
+
 # PROGRAM 1
 # Write an algorithm to accept item code, item name, quantity sold, price per unit and calculate the cost of sales. Also add 12%
 # GST to the price. If the final cost after gst comes out to be above 2000/-, give a 5% discount. After that add an option to
@@ -561,9 +566,105 @@ Your choice(1|2|3): """))
 # 3. multiply
 # 4. divide
 
+def calc():
+    ch = 'y'
+    while ch.lower() == 'y':
+        operator = int(input("""What do you want to do?
+1 -> add
+2 -> subtract
+3 -> multiply
+4 -> divide
+Your choice(1|2|3|4): """))
+
+        a = float(input("Enter number 1: "))
+        b = float(input("Enter number 2: "))
+        if operator == 1:
+            print(f"{a} + {b} is {a+b}")
+
+        if operator == 2:
+            print(f"{a} - {b} is {a-b}")
+
+        if operator == 3:
+            print(f"{a} x {b} is {a*b}")
+
+        if operator == 4:
+            print(f"{a} / {b} is {a/b}")
+
+        ch = input(
+            "To calculate the answer to another problem, enter 'y'| to stop the program, enter anything else: ")
+
 
 # PROGRAM 26
-# Accept a number from user and find the number of digits in it
+# Accept a number from user and find the number of digits in it.
 
 def length_num():
+    num = float(input("Enter a number: "))
+    count = 0
+    for i in str(num):
+        count += 1
+    if num % 1 == 0:
+        count -= 2
+    else:
+        count -= 1
+    print(f"{num} has {count} digits")
+
+
+# PROGRAM 27
+# Accept a number from user and check if it's an armstrong number.
+
+def armstrong_check():
     num = int(input("Enter a number: "))
+    final = 0
+    temp = 1
+    l = []
+    for i in str(num):
+        l.append(i)
+
+    for i in l:
+        temp = int(i)**3
+        final += temp
+
+    if final == num:
+        print(f"{num} is an armstrong number.")
+    else:
+        print(f"{num} is not an armstrong number.")
+
+
+# PROGRAM 28
+# Accept a number and check if it's a palindrome.
+
+def palindrome():
+    num = int(input("Enter a number: "))
+    l = []
+    count = 0
+    rev_l = []
+    for i in str(num):
+        l.append(i)
+        count += 1
+
+    for i in range(count, 0, -1):
+        rev_l.append(l[i-1])
+
+    if rev_l == l:
+        print(f"{num} is a palindrome.")
+    else:
+        print(f"{num} is not a palindrome.")
+
+
+# PROGRAM 29
+# Accept a number from user and display the reverse of the number.
+
+def rev_num():
+    num = (input("Enter a number: "))
+    count = 0
+    l = []
+    rev_l = []
+    rev_num = ''
+    for i in num:
+        l.append(i)
+        count += 1
+    for i in range(count, 0, -1):
+        rev_l.append(l[i-1])
+    for i in rev_l:
+        rev_num += i
+    print(rev_num)
