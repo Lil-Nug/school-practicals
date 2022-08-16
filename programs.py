@@ -2,6 +2,7 @@
 # PRACTICAL 2 -> PROGRAMS 9-23
 # PRACTICAL 3 -> PROGRAMS 24-25
 # PRACTICAL 4 -> PROGRAMS 26-29
+# PRACTICAL 5 -> PROGRAMS 30-35
 
 # PROGRAM 1
 # Write an algorithm to accept item code, item name, quantity sold, price per unit and calculate the cost of sales. Also add 12%
@@ -668,3 +669,75 @@ def rev_num():
     for i in rev_l:
         rev_num += i
     print(rev_num)
+
+
+# PROGRAM 30
+# Write a program that accepts a string from user. Your program should count and
+# display number of vowels in that string.
+
+def vowel_count():
+    string = str(input("Enter a string: "))
+    count = 0
+    for i in string:
+        if i in ['a', 'e', 'i', 'o', 'u']:
+            count += 1
+    print(f'{string} has {count} vowels.')
+
+
+# PROGRAM 31
+# Write a program that reads a string from keyboard and display:
+# The number of uppercase letters in the string
+# The number of lowercase letters in the string
+# The number of digits in the string
+# The number of whitespace characters in the string
+
+def p31():
+    string = str(input("Enter a string: "))
+    ucount = 0
+    lcount = 0
+    digits = 0
+    whitespace = 0
+    for i in string:
+        if i.isupper():
+            ucount += 1
+        elif i.islower():
+            lcount += 1
+        elif i.isdigit():
+            digits += 1
+        elif i.isspace():
+            whitespace += 1
+    print(f'''Uppercase letters: {ucount}\nLowercase letters: {lcount}
+No. of Digits: {digits}\nNo. of Whitespaces: {whitespace}''')
+
+
+# PROGRAM 32
+# Write a Python program that accepts a string from user. Your program should create and
+# display a new string where the first and last characters have been exchanged.
+
+def p32():
+    string = str(input("Enter a string: "))
+    print(string[-1]+string[1:-1]+string[0])
+
+
+# PROGRAM 33
+# Write a Python program that accepts a string from user. Your program should create
+# a new string in reverse of first string and display it.
+
+def p33():
+    string = str(input("Enter a string: "))
+    print(string[::-1])
+
+
+# PROGRAM 34
+# Write a Python program that accepts a string from user. Your program should create
+# a new string by shifting one position to left.
+
+def p34():
+    string = str(input("Enter a string: "))
+    print(string[1:] + string[0])
+
+
+# PROGRAM 35
+# Write a program that asks the user to input his name and print its initials.
+# Assuming that the user always types first name, middle name and last name and does
+# not include any unnecessary spaces.
