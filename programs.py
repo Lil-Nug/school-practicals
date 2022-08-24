@@ -429,12 +429,15 @@ def sum_series_17():
     result = x
     temp = 0
     sign = -1
-    for i in range(2, n, 2):
+    power = 3
+    den = 3
+    for i in range(n-1):
         fact_temp = 1
-        for j in range(i+1):
+        for j in range(den):
             fact_temp *= j+1
-        temp = (x**(i+1))/(fact_temp)*sign
-        result += temp
+        result += (x**power)/fact_temp*sign
+        power += 2
+        den += 2
         sign *= -1
     print(round(result, 3))
 
