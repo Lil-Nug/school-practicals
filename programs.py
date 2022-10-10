@@ -2,7 +2,7 @@
 # PRACTICAL 2 -> PROGRAMS 9-23
 # PRACTICAL 3 -> PROGRAMS 24-25
 # PRACTICAL 4 -> PROGRAMS 26-29
-# PRACTICAL 5 -> PROGRAMS 30-35
+# PRACTICAL 5 -> PROGRAMS 30-351
 
 # PROGRAM 1
 # Write an algorithm to accept item code, item name, quantity sold, price per unit and calculate the cost of sales. Also add 12%
